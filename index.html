@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>个人作品集</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
       color-scheme: dark;
@@ -72,8 +71,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 40px;
-      color: var(--accent);
       background: var(--accent-soft);
       box-shadow: 0 0 40px rgba(0, 229, 255, 0.15);
     }
@@ -111,6 +108,7 @@
       transition: color .2s;
     }
     .contact-bar a:hover { color: var(--accent); }
+    .contact-bar a svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
 
     /* 分隔标题 */
     .section-title {
@@ -126,7 +124,7 @@
       height: 1px;
       background: var(--line);
     }
-    .section-title i { color: var(--accent); }
+    .section-title svg { width: 20px; height: 20px; fill: var(--accent); flex-shrink: 0; }
 
     /* 项目卡片 */
     .project-grid {
@@ -210,6 +208,7 @@
       gap: 4px;
     }
     .project-card .card-footer .repo-link:hover { text-decoration: underline; }
+    .project-card .card-footer .repo-link svg { width: 14px; height: 14px; fill: currentColor; }
     .project-card .card-footer .status {
       font-size: 11px;
       color: var(--muted);
@@ -226,14 +225,12 @@
     }
     .footer a { color: var(--accent); text-decoration: none; }
 
-    /* 响应式 */
     @media (max-width: 640px) {
       .header { padding: 40px 0; }
       .header h1 { font-size: 24px; }
       .project-grid { grid-template-columns: 1fr; }
     }
 
-    /* 淡入动画 */
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -252,21 +249,42 @@
     <!-- 头部 -->
     <div class="header fade-in visible">
       <div class="avatar">
-        <i class="fas fa-user-astronaut"></i>
+        <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M20 21a8 8 0 1 0-16 0"/>
+          <path d="M16 12.5A4 4 0 0 1 18 16v1"/>
+          <path d="M8 12.5A4 4 0 0 0 6 16v1"/>
+          <circle cx="18" cy="10" r="1.5" fill="var(--accent)" stroke="none"/>
+          <circle cx="6" cy="10" r="1.5" fill="var(--accent)" stroke="none"/>
+        </svg>
       </div>
       <h1>sdjybn</h1>
-      <div class="tagline"><i class="fas fa-terminal"></i> 独立开发者 · 自动化工具 & AI 应用</div>
+      <div class="tagline">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:4px">
+          <polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>
+        </svg>
+        独立开发者 · 自动化工具 &amp; AI 应用
+      </div>
       <p class="desc">专注于游戏自动化、桌面工具开发和Web应用构建。善于用技术解决重复性问题，打造高效的自动化解决方案。</p>
       <div class="contact-bar">
-        <a href="mailto:sdjybn@foxmail.com"><i class="fas fa-envelope"></i> sdjybn@foxmail.com</a>
-        <a href="https://github.com/sdjybn" target="_blank"><i class="fab fa-github"></i> github.com/sdjybn</a>
-        <a href="#"><i class="fab fa-qq"></i> 806025862</a>
+        <a href="mailto:sdjybn@foxmail.com">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          sdjybn@foxmail.com
+        </a>
+        <a href="https://github.com/sdjybn" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          github.com/sdjybn
+        </a>
+        <a href="#">
+          <svg viewBox="0 0 24 24"><path d="M21.2 8.4c.5.4.8 1 .8 1.6v10c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V10c0-.6.3-1.2.8-1.6L12 2l9.2 6.4z"/><path d="M8 17.5c-.8 0-1.5-.7-1.5-1.5v-2.5c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5V16c0 .8-.7 1.5-1.5 1.5z"/><path d="M12 17.5c-.8 0-1.5-.7-1.5-1.5v-3.5c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5V16c0 .8-.7 1.5-1.5 1.5z"/><path d="M16 17.5c-.8 0-1.5-.7-1.5-1.5v-5c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5V16c0 .8-.7 1.5-1.5 1.5z"/></svg>
+          806025862
+        </a>
       </div>
     </div>
 
     <!-- 项目作品集 -->
     <div class="section-title fade-in">
-      <i class="fas fa-cube"></i>
+      <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       <span>项目作品集</span>
       <span class="line"></span>
     </div>
@@ -281,7 +299,10 @@
           <span>Python</span><span>PySide6</span><span>OpenCV</span><span>OCR</span>
         </div>
         <div class="card-footer">
-          <a class="repo-link" href="https://github.com/sdjybn/SR-YX-POE-ZZ" target="_blank"><i class="fab fa-github"></i> SR-YX-POE-ZZ</a>
+          <a class="repo-link" href="https://github.com/sdjybn/SR-YX-POE-ZZ" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            SR-YX-POE-ZZ
+          </a>
           <span class="status">🔒 私人</span>
         </div>
       </div>
@@ -294,7 +315,10 @@
           <span>Python</span><span>CDP</span><span>PySide6</span>
         </div>
         <div class="card-footer">
-          <a class="repo-link" href="https://github.com/sdjybn/SR-YX-POE-SH" target="_blank"><i class="fab fa-github"></i> SR-YX-POE-SH</a>
+          <a class="repo-link" href="https://github.com/sdjybn/SR-YX-POE-SH" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            SR-YX-POE-SH
+          </a>
           <span class="status">🔒 私人</span>
         </div>
       </div>
@@ -307,7 +331,10 @@
           <span>Python</span><span>OCR</span><span>PySide6</span><span>QSS</span>
         </div>
         <div class="card-footer">
-          <a class="repo-link" href="https://github.com/sdjybn/SR-YX-POE-SC" target="_blank"><i class="fab fa-github"></i> SR-YX-POE-SC</a>
+          <a class="repo-link" href="https://github.com/sdjybn/SR-YX-POE-SC" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            SR-YX-POE-SC
+          </a>
           <span class="status">🔒 私人</span>
         </div>
       </div>
@@ -320,7 +347,10 @@
           <span>Python</span><span>PySide6</span><span>OpenCV</span>
         </div>
         <div class="card-footer">
-          <a class="repo-link" href="https://github.com/sdjybn/SR-GJ-LT" target="_blank"><i class="fab fa-github"></i> SR-GJ-LT</a>
+          <a class="repo-link" href="https://github.com/sdjybn/SR-GJ-LT" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            SR-GJ-LT
+          </a>
           <span class="status">🔒 私人</span>
         </div>
       </div>
@@ -333,7 +363,10 @@
           <span>Python</span><span>OpenGL</span><span>Cython</span>
         </div>
         <div class="card-footer">
-          <a class="repo-link" href="https://github.com/sdjybn/SR-GJ-DT" target="_blank"><i class="fab fa-github"></i> SR-GJ-DT</a>
+          <a class="repo-link" href="https://github.com/sdjybn/SR-GJ-DT" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            SR-GJ-DT
+          </a>
           <span class="status">🔒 私人</span>
         </div>
       </div>
@@ -346,7 +379,10 @@
           <span>Python</span><span>Flask</span><span>SQLite</span>
         </div>
         <div class="card-footer">
-          <a class="repo-link" href="https://github.com/sdjybn/SR-GJ-YZ" target="_blank"><i class="fab fa-github"></i> SR-GJ-YZ</a>
+          <a class="repo-link" href="https://github.com/sdjybn/SR-GJ-YZ" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            SR-GJ-YZ
+          </a>
           <span class="status">🔒 私人</span>
         </div>
       </div>
@@ -359,7 +395,10 @@
           <span>Python</span><span>PySide6</span>
         </div>
         <div class="card-footer">
-          <a class="repo-link" href="https://github.com/sdjybn/SR-GJ-JX" target="_blank"><i class="fab fa-github"></i> SR-GJ-JX</a>
+          <a class="repo-link" href="https://github.com/sdjybn/SR-GJ-JX" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            SR-GJ-JX
+          </a>
           <span class="status">🔒 私人</span>
         </div>
       </div>
@@ -372,7 +411,10 @@
           <span>HTML</span><span>CSS</span><span>JavaScript</span>
         </div>
         <div class="card-footer">
-          <a class="repo-link" href="https://github.com/sdjybn/GK-WY-SY" target="_blank"><i class="fab fa-github"></i> GK-WY-SY</a>
+          <a class="repo-link" href="https://github.com/sdjybn/GK-WY-SY" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GK-WY-SY
+          </a>
           <span class="status">🔓 公开</span>
         </div>
       </div>
@@ -385,7 +427,10 @@
           <span>HTML</span><span>CSS</span><span>JavaScript</span>
         </div>
         <div class="card-footer">
-          <a class="repo-link" href="https://github.com/sdjybn/GK-WY-DJ" target="_blank"><i class="fab fa-github"></i> GK-WY-DJ</a>
+          <a class="repo-link" href="https://github.com/sdjybn/GK-WY-DJ" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GK-WY-DJ
+          </a>
           <span class="status">🔓 公开</span>
         </div>
       </div>
@@ -398,7 +443,10 @@
           <span>Python</span><span>Rust</span><span>PySide6</span>
         </div>
         <div class="card-footer">
-          <a class="repo-link" href="https://github.com/sdjybn/SR-KF-GJ" target="_blank"><i class="fab fa-github"></i> SR-KF-GJ</a>
+          <a class="repo-link" href="https://github.com/sdjybn/SR-KF-GJ" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            SR-KF-GJ
+          </a>
           <span class="status">🔒 私人</span>
         </div>
       </div>
@@ -412,7 +460,6 @@
 
   </div>
 
-  <!-- 滚动动画 -->
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
